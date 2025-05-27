@@ -1,0 +1,29 @@
+---
+title: 'Install Plugins'
+description: 'Installation guide for Ruoom plugins'
+icon: 'puzzle'
+---
+
+## Installing Django Plugins
+
+To install a Django plugin, such as the Payment Plugin, follow these steps:
+
+1. **Ensure Django is Installed**: Make sure Django is installed in your environment.
+
+2. **Obtain the Plugin**: Clone the repository or download the plugin files.
+
+3. **Add to Plugins Folder**: Move the plugin files into the `plugins` folder of the `ruoom-core` repository.
+
+4. **Update Django Settings**: Add the plugin to your `INSTALLED_APPS` in your Django settings. For example, for the Payment Plugin, add `'plugins.payment'`.
+
+5. **Run Migrations**: Execute the following command to set up the necessary database tables for the plugin:
+
+   ```bash
+   python manage.py migrate <plugin_name>
+   ```
+
+Replace `<plugin_name>` with the actual name of the plugin you are installing.
+
+6. **Verify Installation**: Check your Django admin panel to ensure the plugin appears and is functioning as expected.
+
+For specific configuration details, refer to the plugin's README or documentation.

@@ -1,0 +1,107 @@
+---
+title: '아키텍처'
+description: 'Ruoom Core 아키텍처 개요'
+---
+
+<Info>
+  **전제 조건**: 진행하기 전에 Node.js(버전 19 이상)를 설치하십시오. <br />
+  진행하기 전에 ```docs.json```으로 업그레이드하고 기존 ```mint.json``` 파일을 삭제하십시오.
+</Info>
+
+Mintlify를 설치하고 운영 체제에서 실행하려면 다음 단계를 따르십시오:
+
+**1단계**: Mintlify 설치:
+
+<CodeGroup>
+
+  ```bash npm
+  npm i -g mintlify
+  ```
+
+```bash yarn
+  yarn global add mintlify
+```
+
+</CodeGroup>
+
+**2단계**: docs 디렉토리(`docs.json` 파일이 있는 위치)로 이동하여 다음 명령을 실행하십시오:
+
+```bash
+mintlify dev
+```
+
+문서의 로컬 미리보기가 `http://localhost:3000`에서 제공됩니다.
+
+### 사용자 정의 포트
+
+기본적으로 Mintlify는 포트 3000을 사용합니다. `--port` 플래그를 사용하여 Mintlify가 실행되는 포트를 사용자 정의할 수 있습니다. 예를 들어, 포트 3333에서 Mintlify를 실행하려면 다음 명령을 사용하십시오:
+
+```bash
+mintlify dev --port 3333
+```
+
+이미 사용 중인 포트에서 Mintlify를 실행하려고 하면 다음 사용 가능한 포트를 사용합니다:
+
+```md
+포트 3000이 이미 사용 중입니다. 대신 3001을 시도합니다.
+```
+
+## Mintlify 버전
+
+각 CLI 릴리스는 특정 Mintlify 버전과 연결되어 있습니다. 로컬 웹사이트가 프로덕션 버전과 일치하지 않으면 CLI를 업데이트하십시오:
+
+<CodeGroup>
+
+```bash npm
+npm i -g mintlify@latest
+```
+
+```bash yarn
+yarn global upgrade mintlify
+```
+
+</CodeGroup>
+
+## 링크 유효성 검사
+
+CLI는 문서에 있는 참조 링크의 유효성을 검사하는 데 도움이 될 수 있습니다. 깨진 링크를 식별하려면 다음 명령을 사용하십시오:
+
+```bash
+mintlify broken-links
+```
+
+## 배포
+
+<Tip>
+  무제한 편집자가 [Pro
+  플랜](https://mintlify.com/pricing) 이상에서 사용할 수 있습니다.
+</Tip>
+
+배포가 성공하면 다음을 볼 수 있습니다:
+
+<Frame>
+  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+## 코드 서식
+
+MDX를 인식하고 서식 지정하는 IDE 확장을 사용하는 것을 권장합니다. VSCode 사용자의 경우, [MDX VSCode 확장](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)을 사용하여 구문 강조 표시를 사용하고, [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)를 사용하여 코드 서식을 지정하십시오.
+
+## 문제 해결
+
+<AccordionGroup>
+  <Accordion title='오류: "sharp" 모듈을 darwin-arm64 런타임을 사용하여 로드할 수 없습니다'>
+
+    이는 노드의 오래된 버전으로 인해 발생할 수 있습니다. 다음을 시도하십시오:
+    1. 현재 설치된 mintlify 버전을 제거합니다: `npm remove -g mintlify`
+    2. Node v19 이상으로 업그레이드합니다.
+    3. mintlify를 다시 설치합니다: `npm install -g mintlify`
+  </Accordion>
+
+  <Accordion title="문제: 알 수 없는 오류가 발생했습니다">
+  
+    해결책: 디바이스의 루트로 이동하여 \~/.mintlify 폴더를 삭제하십시오. 그런 다음 `mintlify dev`를 다시 실행하십시오.
+  </Accordion>
+</AccordionGroup>
+
+CLI 버전에서 변경된 내용을 알고 싶으신가요? [CLI 변경 로그를 확인하십시오.](https://www.npmjs.com/package/mintlify?activeTab=versions)

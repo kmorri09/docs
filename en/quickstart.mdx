@@ -1,0 +1,38 @@
+---
+title: 'Quickstart'
+description: 'Get started with Ruoom Core in a few simple steps'
+---
+
+## Quickstart Guide for Ruoom Core
+
+Welcome to Ruoom Core! Follow these steps to set up your development environment and start using Ruoom Core.
+
+### Setting Up Your Environment
+
+1. **Clone the Repository**: Clone the Ruoom Core repository from GitHub to your local machine.
+   
+   ```bash
+   git clone https://github.com/your-username/ruoom-core.git
+   cd ruoom-core
+   ```
+
+2. **Initialize the Database**: Set up PostgreSQL with a database called "Ruoom", a user called "ruoom_admin", and password "password". Then, run the following command to apply migrations:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+3. **Run the Development Server**: Start the local development server to see Ruoom Core in action.
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   You can now access the application at `localhost:8000` and create an initial account.
+
+### Next Steps
+
+- Explore the API and plugin development guides in this documentation to extend Ruoom Core's functionality.
+- Contribute to the project by submitting issues or pull requests on GitHub.
+
+For more detailed instructions, refer to the README file in the Ruoom Core repository.

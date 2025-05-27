@@ -1,102 +1,171 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Ruoom Code Lab",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#f55a42",
+    "light": "#f55a42",
+    "dark": "#f55a42"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "Get Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
+            "tab": "Open Source Core",
+            "groups": [
+              {
+                "group": "Get Started with Ruoom Core",
+                "pages": [
+                  "en/index",
+                  "en/quickstart",
+                  "en/architecture"
+                ]
+              },
+              {
+                "group": "Essentials",
+                "pages": [
+                  "en/essentials/plugins"
+                ]
+              }
             ]
           },
           {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+            "tab": "Payment Plugin",
+            "groups": [
+              {
+                "group": "Payment Plugin",
+                "pages": [
+                  "en/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoint Examples",
+                "pages": [
+                  "en/api-reference/endpoint/get",
+                  "en/api-reference/endpoint/create",
+                  "en/api-reference/endpoint/delete",
+                  "en/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Digital Products Plugin",
+            "groups": [
+              {
+                "group": "Digital Products Plugin",
+                "pages": [
+                  "en/api-reference/introduction2"
+                ]
+              },
+              {
+                "group": "Endpoint Examples",
+                "pages": [
+                  "en/api-reference/endpoint/get",
+                  "en/api-reference/endpoint/create",
+                  "en/api-reference/endpoint/delete",
+                  "en/api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
-        "groups": [
+        "language": "ko",
+        "tabs": [
           {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "오픈소스 커어",
+            "groups": [
+              {
+                "group": "Ruoom Core 시작하기",
+                "pages": [
+                  "ko/index",
+                  "ko/quickstart",
+                  "ko/architecture"
+                ]
+              },
+              {
+                "group": "기본 설정",
+                "pages": [
+                  "ko/essentials/plugins"
+                ]
+              }
             ]
           },
           {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+            "tab": "결제 플러그인",
+            "groups": [
+              {
+                "group": "결제 플러그인 소개",
+                "pages": [
+                  "ko/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoint 예시",
+                "pages": [
+                  "ko/api-reference/endpoint/get",
+                  "ko/api-reference/endpoint/create",
+                  "ko/api-reference/endpoint/delete",
+                  "ko/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "디지털 상품 플러그인",
+            "groups": [
+              {
+                "group": "디지털 상품 플러그인 소개",
+                "pages": [
+                  "ko/api-reference/introduction2"
+                ]
+              },
+              {
+                "group": "Endpoint 예시",
+                "pages": [
+                  "ko/api-reference/endpoint/get",
+                  "ko/api-reference/endpoint/create",
+                  "ko/api-reference/endpoint/delete",
+                  "ko/api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "global": {}
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/Website Logo R.png",
+    "dark": "/logo/Website Logo R.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@ruoomsoftware.com"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://dashboard.mintlify.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Code Lab",
+      "href": "https://ruoomsoftware.com/code-lab"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+       "github": "https://github.com/Ruoom",
+      "linkedin": "https://www.linkedin.com/company/37465409"
     }
   }
 }
