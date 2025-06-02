@@ -5,7 +5,7 @@ description: '몇 가지 간단한 단계로 Ruoom Core 시작하기'
 
 ## Ruoom Core 빠른 시작 가이드
 
-Ruoom Core에 오신 것을 환영합니다! 개발 환경을 설정하고 Ruoom Core를 사용하려면 다음 단계를 따르십시오.
+Ruoom Core에 오신 것을 환영합니다! 개발 환경을 설정하고 Ruoom Core를 사용하려면 다음 단계를 따르십시오. 시각적 안내를 위해 [설명 비디오](https://www.youtube.com/watch?v=BqPwiajnBf0)를 확인하십시오.
 
 ### 환경 설정
 
@@ -16,23 +16,39 @@ Ruoom Core에 오신 것을 환영합니다! 개발 환경을 설정하고 Ruoom
    cd ruoom-core
    ```
 
-2. **데이터베이스 초기화**: "Ruoom"이라는 데이터베이스, "ruoom_admin"이라는 사용자 및 "password"라는 암호로 PostgreSQL을 설정합니다. 그런 다음 다음 명령을 실행하여 마이그레이션을 적용합니다:
+2. **PostgreSQL 데이터베이스 생성**: "Ruoom"이라는 PostgreSQL 데이터베이스를 생성하고 "ruoom_admin"이라는 사용자가 소유하며 암호는 "password"입니다. PGAdmin을 사용하여 수동으로 수행하거나 다음 SQL 명령을 사용할 수 있습니다:
+
+   ```sql
+   CREATE DATABASE Ruoom;
+   CREATE USER ruoom_admin WITH PASSWORD 'password';
+   ALTER DATABASE Ruoom OWNER TO ruoom_admin;
+   ```
+
+3. **필요한 항목 설치**: 요구사항 파일을 사용하여 모든 필요한 종속성을 설치하십시오.
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **데이터베이스 초기화**: "Ruoom"이라는 데이터베이스, "ruoom_admin"이라는 사용자 및 "password"라는 암호로 PostgreSQL을 설정합니다. 그런 다음 다음 명령을 실행하여 마이그레이션을 적용합니다:
 
    ```bash
    python manage.py migrate
    ```
 
-3. **개발 서버 실행**: 로컬 개발 서버를 시작하여 Ruoom Core를 실행합니다.
+5. **개발 서버 실행**: 로컬 개발 서버를 시작하여 Ruoom Core를 실행합니다.
 
    ```bash
    python manage.py runserver
    ```
 
-   이제 `localhost:8000`에서 애플리케이션에 액세스하고 초기 계정을 생성할 수 있습니다.
+   이제 `localhost:8000`에서 애플리케이션에 액세스할 수 있습니다. 다음 페이지가 표시되어 관리자 자격 증명을 생성할 수 있습니다:
+
+   ![가입 페이지](/images/signup_page.png)
 
 ### 다음 단계
 
-- 이 문서의 API 및 플러그인 개발 가이드를 탐색하여 Ruoom Core의 기능을 확장하십시오.
+- Ruoom에서 게시한 다양한 플러그인을 탐색하여 Ruoom Core의 기능을 향상시키십시오.
 - GitHub에서 문제를 제출하거나 풀 요청을 제출하여 프로젝트에 기여하십시오.
 
 자세한 지침은 Ruoom Core 리포지토리의 README 파일을 참조하십시오.

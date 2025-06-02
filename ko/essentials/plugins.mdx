@@ -1,29 +1,29 @@
 ---
-title: 'Install Plugins'
-description: 'Installation guide for Ruoom plugins'
+title: '플러그인 설치'
+description: 'Ruoom 플러그인 설치 가이드'
 icon: 'puzzle'
 ---
 
-## Installing Django Plugins
+## Django 플러그인 설치
 
-To install a Django plugin, such as the Payment Plugin, follow these steps:
+Django 플러그인(예: 결제 플러그인)을 설치하려면 다음 단계를 따르십시오:
 
-1. **Ensure Django is Installed**: Make sure Django is installed in your environment.
+1. **Django가 설치되어 있는지 확인**: 환경에 Django가 설치되어 있는지 확인하십시오.
 
-2. **Obtain the Plugin**: Clone the repository or download the plugin files.
+2. **플러그인 획득**: 리포지토리를 복제하거나 플러그인 파일을 다운로드하십시오.
 
-3. **Add to Plugins Folder**: Move the plugin files into the `plugins` folder of the `ruoom-core` repository.
+3. **플러그인 폴더에 추가**: 플러그인 파일을 `ruoom-core` 리포지토리의 `plugins` 폴더로 이동하십시오.
 
-4. **Update Django Settings**: Add the plugin to your `INSTALLED_APPS` in your Django settings. For example, for the Payment Plugin, add `'plugins.payment'`.
+4. **Django 설정 업데이트**: Django 설정의 `INSTALLED_APPS`에 플러그인을 추가하십시오. 예를 들어, 결제 플러그인의 경우 `'plugins.payment'`를 추가하십시오.
 
-5. **Run Migrations**: Execute the following command to set up the necessary database tables for the plugin:
+5. **마이그레이션 실행**: 다음 명령을 실행하여 플러그인에 필요한 데이터베이스 테이블을 설정하십시오:
 
    ```bash
    python manage.py migrate <plugin_name>
    ```
 
-Replace `<plugin_name>` with the actual name of the plugin you are installing.
+`<plugin_name>`을 설치 중인 플러그인의 실제 이름으로 바꾸십시오.
 
-6. **Verify Installation**: Check your Django admin panel to ensure the plugin appears and is functioning as expected.
+6. **설치 확인**: Django 서버를 실행하고 Django 관리자 패널을 확인하여 플러그인 모델이 나타나는지 확인하십시오. 또한 각 플러그인에는 포함된 특정 페이지가 있으며, UI에 이러한 페이지가 나타나면 설치가 성공적으로 완료된 것입니다.
 
-For specific configuration details, refer to the plugin's README or documentation.
+플러그인의 README 또는 문서를 참조하여 구체적인 구성 세부 정보를 확인하십시오.

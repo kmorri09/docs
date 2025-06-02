@@ -76,10 +76,10 @@
         "language": "ko",
         "tabs": [
           {
-            "tab": "오픈소스 커어",
+            "tab": "Ruoom 핵심",
             "groups": [
               {
-                "group": "Ruoom Core 시작하기",
+                "group": "Ruoom 핵심",
                 "pages": [
                   "ko/index",
                   "ko/quickstart",
@@ -98,18 +98,17 @@
             "tab": "결제 플러그인",
             "groups": [
               {
-                "group": "결제 플러그인 소개",
+                "group": "결제 플러그인",
                 "pages": [
-                  "ko/api-reference/introduction"
+                  "ko/payment-plugin/index",
+                  "ko/payment-plugin/quickstart",
+                  "ko/payment-plugin/architecture"
                 ]
               },
               {
-                "group": "Endpoint 예시",
+                "group": "기본 설정",
                 "pages": [
-                  "ko/api-reference/endpoint/get",
-                  "ko/api-reference/endpoint/create",
-                  "ko/api-reference/endpoint/delete",
-                  "ko/api-reference/endpoint/webhook"
+                  "ko/essentials/plugins"
                 ]
               }
             ]
@@ -118,18 +117,17 @@
             "tab": "디지털 상품 플러그인",
             "groups": [
               {
-                "group": "디지털 상품 플러그인 소개",
+                "group": "디지털 상품 플러그인",
                 "pages": [
-                  "ko/api-reference/introduction2"
+                  "ko/digitalproducts-plugin/index",
+                  "ko/digitalproducts-plugin/quickstart",
+                  "ko/digitalproducts-plugin/architecture"
                 ]
               },
               {
-                "group": "Endpoint 예시",
+                "group": "기본 설정",
                 "pages": [
-                  "ko/api-reference/endpoint/get",
-                  "ko/api-reference/endpoint/create",
-                  "ko/api-reference/endpoint/delete",
-                  "ko/api-reference/endpoint/webhook"
+                  "ko/essentials/plugins"
                 ]
               }
             ]

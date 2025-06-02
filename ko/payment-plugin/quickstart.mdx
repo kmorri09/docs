@@ -1,0 +1,49 @@
+---
+title: 빠른 시작
+description: Payment Plugin 설정을 위한 빠른 시작 가이드
+---
+
+## Payment Plugin 빠른 시작 가이드
+
+Payment Plugin에 오신 것을 환영합니다! 이 빠른 시작 가이드는 Payment Plugin을 설정하고 사용하는 방법을 안내합니다.
+
+## 설정
+
+### 전제 조건
+
+시작하기 전에 Ruoom Core 오픈 소스 리포지토리를 [빠른 시작 가이드](/ko/quickstart) 를 따라 설치했는지 확인하십시오.
+
+### 단계별 지침
+
+1. **리포지토리 다운로드**
+
+[Ruoom Code Lab](https://ruoomsoftware.com/code-lab/)에서 리포지토리를 구매한 후 제공된 소스 코드 패키지를 다운로드하십시오.
+
+리포지토리를 구매한 후에도 GitHub에 접근하여 리포지토리를 클론하고 풀 요청을 통해 프로젝트에 기여할 수 있습니다. 이는 커뮤니티의 협력과 개선을 촉진합니다. 자세한 내용은 [support@ruoomsoftware.com](mailto:support@ruoomsoftware.com)로 문의하십시오.
+
+2. **플러그인 설치**
+
+다운로드한 리포지토리 코드를 Ruoom Core 프로젝트의 `plugins` 폴더에 배치합니다. 그런 다음, `settings.py` 파일의 `INSTALLED_APPS` 리스트에 `plugins.payment`를 추가하여 Payment Plugin이 Ruoom Core 프레임워크에서 인식되도록 합니다.
+
+3. **개발 서버 실행**
+
+Payment Plugin을 실행하려면 로컬 개발 서버를 시작하십시오.
+
+```bash
+python manage.py runserver
+```
+
+로그인하면 관리 탐색 바에 구매 옵션이 표시되어 설치가 성공적으로 완료되었음을 나타냅니다.
+
+4. **결제 게이트웨이 구성**
+
+Payment Plugin은 선호하는 결제 게이트웨이 API 키를 사용하여 결제를 처리합니다. 결제 게이트웨이 API 키를 찾은 후, 플랫폼 설정 -> 결제 처리에서 새 페이지로 이동하십시오. 여기에서 플랫폼에 사용할 결제 게이트웨이 API를 구성할 수 있습니다:
+
+![결제 처리](/images/payment_processing.png)
+
+## 다음 단계
+
+- Payment Plugin에서 사용할 수 있는 다양한 결제 옵션을 탐색하십시오.
+- GitHub에서 문제를 제출하거나 풀 요청을 제출하여 프로젝트에 기여하십시오.
+
+자세한 내용은 Payment Plugin 리포지토리의 README 파일을 참조하십시오.

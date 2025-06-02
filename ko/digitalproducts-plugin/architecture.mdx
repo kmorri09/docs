@@ -1,0 +1,22 @@
+---
+title: 아키텍처
+description: 디지털 제품 플러그인의 아키텍처 개요
+---
+
+## 디지털 제품 플러그인 아키텍처 개요
+
+![디지털 제품 플러그인 아키텍처 다이어그램](/images/digitalproducts_plugin_architecture.svg)
+
+이 다이어그램은 디지털 제품 플러그인의 아키텍처를 보여주며, 다양한 모델이 서로 어떻게 상호작용하고 Business 및 Profile과 같은 Ruoom Core 모델의 기능을 확장하는지를 보여줍니다.
+
+## 디지털 제품 플러그인 URL
+- **디지털 제품**: `/digitalproducts/` - 디지털 제품 목록을 표시합니다.
+- **디지털 제품 편집**: `/digitalproducts_edit/<int:id>` - 특정 디지털 제품을 편집합니다.
+- **디지털 제품 삭제**: `/digitalproducts_delete` - 디지털 제품을 삭제합니다.
+- **체크아웃**: `/checkout/<int:id>` - 특정 디지털 제품에 대한 체크아웃 페이지입니다.
+- **체크아웃(새로 고침)**: `/checkout/<int:id>/<str:refresh>` - 새로 고침 옵션이 있는 체크아웃 페이지입니다.
+
+## 디지털 제품 데이터베이스 모델
+- **DigitalProduct**: 디지털 제품에 대한 정보를 저장합니다.
+
+이 모델들은 디지털 제품 플러그인의 핵심 데이터 구조를 정의하며, 제품 및 거래 데이터를 처리합니다.
