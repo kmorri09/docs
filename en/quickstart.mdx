@@ -5,7 +5,7 @@ description: 'Get started with Ruoom Core in a few simple steps'
 
 ## Quickstart Guide for Ruoom Core
 
-Welcome to Ruoom Core! Follow these steps to set up your development environment and start using Ruoom Core.
+Welcome to Ruoom Core! Follow these steps to set up your development environment and start using Ruoom Core. For a visual walkthrough, check out our [instructional video](https://www.youtube.com/watch?v=BqPwiajnBf0).
 
 ### Setting Up Your Environment
 
@@ -16,23 +16,39 @@ Welcome to Ruoom Core! Follow these steps to set up your development environment
    cd ruoom-core
    ```
 
-2. **Initialize the Database**: Set up PostgreSQL with a database called "Ruoom", a user called "ruoom_admin", and password "password". Then, run the following command to apply migrations:
+2. **Create PostgreSQL Database**: Create a PostgreSQL database called "Ruoom" owned by a user named "ruoom_admin" with the password "password". You can do this manually using PGAdmin or using the following SQL commands:
+
+   ```sql
+   CREATE DATABASE Ruoom;
+   CREATE USER ruoom_admin WITH PASSWORD 'password';
+   ALTER DATABASE Ruoom OWNER TO ruoom_admin;
+   ```
+
+3. **Install Requirements**: Install all necessary dependencies using the requirements file.
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Initialize the Database**: Set up PostgreSQL with a database called "Ruoom", a user called "ruoom_admin", and password "password". Then, run the following command to apply migrations:
 
    ```bash
    python manage.py migrate
    ```
 
-3. **Run the Development Server**: Start the local development server to see Ruoom Core in action.
+5. **Run the Development Server**: Start the local development server to see Ruoom Core in action.
 
    ```bash
    python manage.py runserver
    ```
 
-   You can now access the application at `localhost:8000` and create an initial account.
+   You can now access the application at `localhost:8000`. You should be met with the following page that allows you to create your admin credentials:
+
+   ![Signup Page](/images/signup_page.png)
 
 ### Next Steps
 
-- Explore the API and plugin development guides in this documentation to extend Ruoom Core's functionality.
+- Explore the various plugins published by Ruoom to enhance the functionality of Ruoom Core.
 - Contribute to the project by submitting issues or pull requests on GitHub.
 
 For more detailed instructions, refer to the README file in the Ruoom Core repository.

@@ -1,0 +1,61 @@
+---
+title: Quickstart
+description: Quickstart guide for setting up the Digital Products Plugin
+---
+
+## Overview
+
+The Digital Products Plugin is a powerful tool for managing digital products. This quickstart guide will walk you through the process of setting up your digital products environment and getting started with the Digital Products Plugin.
+
+## Setup
+
+### Prerequisites
+
+Before you begin, make sure you have installed the Ruoom Core open source repository following its [quickstart guide](/en/quickstart).
+
+Additionally, the Payment Plugin is a prerequisite for the Digital Products Plugin. Make sure you have installed the Payment Plugin following its [quickstart guide](/en/payment-plugin/quickstart).
+
+### Step-by-Step Instructions
+
+1. **Download the Repository**
+
+After purchasing the repository from [Ruoom Code Lab](https://ruoomsoftware.com/code-lab/), download the source code package provided.
+
+You are also welcome to reach out to us at [support@ruoomsoftware.com](mailto:support@ruoomsoftware.com) to request GitHub access to the plugin repositories if you have purchased them. This access enables you to clone the repositories and contribute back to the project through pull requests, fostering community collaboration and improvement.
+
+2. **Install the Plugin**
+
+Next, place the downloaded repository code into the `plugins` folder within your Ruoom Core project. Then, add `plugins.digitalproducts` to the `INSTALLED_APPS` list in your `settings.py` file to ensure the Digital Products Plugin is recognized by the Ruoom Core framework.
+
+3. **Run Migrations**
+
+After installing the plugin, run the following command to apply the necessary database migrations:
+
+```bash
+python manage.py migrate
+```
+
+This step ensures that all database tables required by the Digital Products Plugin are created and ready for use.
+
+4. **Run the Development Server**
+
+Start the local development server to see the Digital Products Plugin in action.
+
+```bash
+python manage.py runserver
+```
+
+Upon logging in, you should see the "Store -> Digital Products" option on the administration navigation bar - indicating successful installation. 
+
+5. **Configure Digital Products**
+
+The Digital Products Plugin allows you to define and manage your digital offerings. Navigate to the "Store -> Digital Products" page to start adding and configuring your digital products.
+
+When adding a digital product, you will specify the link and/or password to the product along with the price and description. Ruoom will then auto-generate a link to which you may direct your customers to purchase said product.
+
+## Next Steps
+
+- Explore the various features available in the Digital Products Plugin.
+- Contribute to the project by submitting issues or pull requests on GitHub.
+
+For more detailed instructions, refer to the README file in the Digital Products Plugin repository.

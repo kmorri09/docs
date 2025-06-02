@@ -1,0 +1,43 @@
+---
+title: Architecture
+description: Architectural overview of the Payment Plugin
+---
+
+## Overview of Payment Plugin Architecture
+
+![Payment Plugin Architecture Diagram](/images/payment_plugin_architecture.svg)
+
+This diagram illustrates the architecture of the Payment Plugin, showcasing how the various models interact with each other and extend the functionality of Ruoom Core models such as Business and Profile.
+
+## Payment URLs
+- **Purchases**: `/purchases/` - Administration page to review purchases made from customers in your business..
+- **Settings**: `/settings/` - Administration page which manages payment settings.
+- **Checkout**: `/checkout/` - Primary checkout page - with optional arguments for specifying customer or cart.
+- **Choose New Customer**: `/choose_new_customer/` - Chooses a new customer for payment.
+- **Credit Balance**: `/credit-balance/` - Manages credit balance.
+- **Credit Services**: `/credit-services/` - Manages credit services.
+- **Stripe Intent**: `/stripe-intent/` - Manages Stripe payment intents.
+- **Stripe Terminal**: `/stripe-terminal/` - Manages Stripe terminal interactions.
+
+## Payment Database Models
+- **ProfilePaymentData**: Stores payment data for profiles. One-to-one with Profile.
+- **PaymentSettings**: Stores payment-specific settings for each Business. One-to-one with Business.
+- **Cart**: Supports shopping for items to purchase. Carts become Orders once checkout completes, and are deleted.
+- **Order**: Converts carts into orders upon payment. Orders are created once payment is completed, and are preserved for record keeping.
+- **Payment**: Handles payment transactions.
+- **Refund**: Manages refund processes.
+
+These models define the core data structure for the Payment Plugin, handling transaction and payment method data.
+
+## Deprecated Components
+
+The following components are not a part of the native, default operation of the Payment Plugin. However, they remain optional and functional instruments for performing key payment operations.
+
+The saving of payment cards is a feature that would be implemented for the Stripe payment gateway. In certain payment flows, Ruoom might store the non-sensitive metadata of a payment card and tie it via Stripe API IDs to associate it with a payment. However, because the current Payment Plugin makes use of the Express Checkout javascript component, this feature isn't integrated into the core flow.
+
+### Deprecated URLs
+- **List Payment Cards**: `/list-payment-cards/` - Lists payment cards.
+- **Add Card Details**: `/add_card_details/` - Adds card details.
+
+### Deprecated Models
+- **Card**: Manages card metadata (non-sensitive) and the integration of cards with the Stripe payment gateway.

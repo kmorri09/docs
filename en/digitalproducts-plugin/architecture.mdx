@@ -1,0 +1,20 @@
+---
+title: Architecture
+description: Architectural overview of the Digital Products Plugin
+---
+
+## Overview of Digital Products Plugin Architecture
+
+![Digital Products Plugin Architecture Diagram](/images/digitalproducts_plugin_architecture.svg)
+
+This diagram illustrates the architecture of the Digital Products Plugin, which highlights that the DigitalProduct model simply features as a type of Cart which is purchased using the Payment Plugin.
+
+## Digital Products Plugin URLs
+- **Digital Products**: `/digitalproducts/` - Administration-facing configuratino page for digital products.
+- **Edit Digital Product**: `/digitalproducts_edit/<int:id>` - Edits a digital product.
+- **Delete Digital Product**: `/digitalproducts_delete` - Deletes a digital product.
+- **Checkout Digital Product**: `/checkout/<int:id>` - URL leading to the checkout page for purchasing a digital product. This is auto-generated as a feature link by the Digital Products configuration page, and forwards the user to the payment page with a newly generated cart.
+- **Checkout Digital Product Refresh**: `/checkout/<int:id>/<str:refresh>` - URL enabling refresh of the checkout page, which avoids duplication of data structures.
+
+## Digital Products Database Models
+- **DigitalProduct**: Represents a digital product with fields for name, price, description, and link to the product. Password is an optional property depending on the content.

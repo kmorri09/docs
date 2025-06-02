@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Ruoom Code Lab",
   "colors": {
-    "primary": "#f55a42",
-    "light": "#f55a42",
-    "dark": "#f55a42"
+    "primary": "#1d1d4d",
+    "light": "#c1b6e6",
+    "dark": "#1d1d4d"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -14,10 +14,10 @@
         "language": "en",
         "tabs": [
           {
-            "tab": "Open Source Core",
+            "tab": "Ruoom Core",
             "groups": [
               {
-                "group": "Get Started with Ruoom Core",
+                "group": "Ruoom Core",
                 "pages": [
                   "en/index",
                   "en/quickstart",
@@ -38,16 +38,15 @@
               {
                 "group": "Payment Plugin",
                 "pages": [
-                  "en/api-reference/introduction"
+                  "en/payment-plugin/index",
+                  "en/payment-plugin/quickstart",
+                  "en/payment-plugin/architecture"
                 ]
               },
               {
-                "group": "Endpoint Examples",
+                "group": "Essentials",
                 "pages": [
-                  "en/api-reference/endpoint/get",
-                  "en/api-reference/endpoint/create",
-                  "en/api-reference/endpoint/delete",
-                  "en/api-reference/endpoint/webhook"
+                  "en/essentials/plugins"
                 ]
               }
             ]
@@ -58,16 +57,15 @@
               {
                 "group": "Digital Products Plugin",
                 "pages": [
-                  "en/api-reference/introduction2"
+                  "en/digitalproducts-plugin/index",
+                  "en/digitalproducts-plugin/quickstart",
+                  "en/digitalproducts-plugin/architecture"
                 ]
               },
               {
-                "group": "Endpoint Examples",
+                "group": "Essentials",
                 "pages": [
-                  "en/api-reference/endpoint/get",
-                  "en/api-reference/endpoint/create",
-                  "en/api-reference/endpoint/delete",
-                  "en/api-reference/endpoint/webhook"
+                  "en/essentials/plugins"
                 ]
               }
             ]

@@ -1,0 +1,49 @@
+---
+title: Quickstart
+description: Quickstart guide for setting up the Payment Plugin
+---
+
+## Overview
+
+The Payment Plugin is a powerful tool for managing payments. This quickstart guide will walk you through the process of setting up your payment environment and getting started with the Payment Plugin.
+
+## Setup
+
+### Prerequisites
+
+Before you begin, make sure you have installed the Ruoom Core open source repository following its [quickstart guide](/en/quickstart).
+
+### Step-by-Step Instructions
+
+1. **Download the Repository**
+
+After purchasing the repository from [Ruoom Code Lab](https://ruoomsoftware.com/code-lab/), download the source code package provided.
+
+You are also welcome to reach out to us at [support@ruoomsoftware.com](mailto:support@ruoomsoftware.com) to request GitHub access to the plugin repositories if you have purchased them. This access enables you to clone the repositories and contribute back to the project through pull requests, fostering community collaboration and improvement.
+
+2. **Install the Plugin**
+
+Next, place the downloaded repository code into the `plugins` folder within your Ruoom Core project. Then, add `plugins.payment` to the `INSTALLED_APPS` list in your `settings.py` file to ensure the Payment Plugin is recognized by the Ruoom Core framework.
+
+3. **Run the Development Server**
+
+Start the local development server to see the Payment Plugin in action.
+
+```bash
+python manage.py runserver
+```
+
+Upon logging in, you should see the Purchases option on the administration navigation bar - indicating successful installation. 
+
+4. **Configure Payment Gateways**
+
+The Payment Plugin uses your preferred payment gateway API keys to process payments. Locate your payment gateway API keys, then navigate to the new page under Platform Settings -> Payment Processing. Here, you can configure the payment gateway APIs you want to use for your platform:
+
+![Payment Processing](/images/payment_processing.png)
+
+## Next Steps
+
+- Explore the various payment options available in the Payment Plugin.
+- Contribute to the project by submitting issues or pull requests on GitHub.
+
+For more detailed instructions, refer to the README file in the Payment Plugin repository.

@@ -3,105 +3,45 @@ title: 'Architecture'
 description: 'An overview of the Ruoom Core architecture'
 ---
 
-<Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. <br />
-  Please upgrade to ```docs.json``` before proceeding and delete the legacy ```mint.json``` file.
-</Info>
+## Overview of Django Application Flow
 
-Follow these steps to install and run Mintlify on your operating system:
+![Django General Structure Diagram](../images/django_general_structure.svg)
 
-**Step 1**: Install Mintlify:
+This diagram illustrates the overall flow of a Django application, showcasing the interaction between Models, Views, Templates, URLs, Middleware, and Static Files. It serves as a high-level guide to understanding how Django processes requests and renders responses.
 
-<CodeGroup>
+## URLs and Associated Templates
 
-  ```bash npm
-  npm i -g mintlify
-  ```
+### Administration URLs
+- **Dashboard**: `/administration/dashboard/` - Main dashboard for administration.
+- **Customers**: `/administration/customers/` - Page for managing customers.
+- **Schedule**: `/administration/schedule/` - Schedule management page.
+- **Staff**: `/administration/staff/` - Staff management page. More staff sub-pages are available as part of Ruoom plugins.
+- **Locations**: `/administration/locations/` - Locations management page.
+- **Help**: `/administration/help/` - Help page with sub-sections for embed and email.
 
-```bash yarn
-yarn global add mintlify
-```
+### Customer URLs
+- **Account Settings**: `/customer/account-settings/` - Customer account settings page.
+- More customer pages are available as part of the Ruoom plugins.
 
-</CodeGroup>
+### Registration URLs
+- **Sign In**: `/registration/signin/` - User sign-in page.
+- **Sign Up**: `/registration/signup/` - User sign-up page.
+- **Sign Out**: `/registration/signout/` - User sign-out endpoint.
+- **New Password**: `/registration/newpassword/` - Create new password page.
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+## Database Models
 
-```bash
-mintlify dev
-```
+### Administration Models
+- **Business**: Represents a business entity with fields for name, customer type, business ID, currency, contact information, and more.
+- **DomainToBusinessMapping**: Maps a domain to a Business with fields for domain and Business. One-to-one with Business.
+- **Location**: Represents a physical location with fields for currency, country code, business hours, and more. Many-to-one with Business.
+- **DaysOfOperation**: Represents operating days for a Location with fields for day of the week and location. One-to-one with Location.
+- **Waiver**: Represents a waiver document associated with a Location. Many-to-one with Location.
+- **Room**: Represents a room within a Location with fields for name, location, dimensions, and business ID. Many-to-one with Location.
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+### Registration Models
+- **Profile**: Extends the User model to include additional fields such as language, user type, contact information, and more. Many-to-one with User.
 
-### Custom Ports
+These models define the core data structure for the Ruoom application, handling business, location, and user-related data. See their interaction in the following model diagram:
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
-
-```bash
-mintlify dev --port 3333
-```
-
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
-
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
-
-## Mintlify Versions
-
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
-
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Validating Links
-
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
-
-```bash
-mintlify broken-links
-```
-
-## Deployment
-
-<Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
-</Tip>
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code Formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the \~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+![Ruoom Core Models](../images/ruoom_core_models.svg)
