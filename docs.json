@@ -142,6 +142,7 @@
     "dark": "/logo/Ruoom.png"
   },
   "navbar": {
+    "language": "en",
     "links": [
       {
         "label": "Support",
