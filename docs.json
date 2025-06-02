@@ -7,7 +7,7 @@
     "light": "#c1b6e6",
     "dark": "#1d1d4d"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/Ruoom.svg",
   "navigation": {
     "languages": [
       {
@@ -140,8 +140,8 @@
     "global": {}
   },
   "logo": {
-    "light": "/logo/Website Logo R.png",
-    "dark": "/logo/Website Logo R.png"
+    "light": "/logo/Ruoom.png",
+    "dark": "/logo/Ruoom.png"
   },
   "navbar": {
     "links": [
